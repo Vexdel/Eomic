@@ -43,7 +43,8 @@ PauseScript:
 F2::Gui, Restore
 Return
 
-Execute: ;Stuff that executes when u press the little execute button, yeah.
+Execute:
+;Stuff that executes when u press the little execute button, yeah.
     if (Paused) 
         return  
     Gui, Submit, NoHide
@@ -62,16 +63,19 @@ GuiClose:
 
 ; AutoHB
 AutoHBLoop() {
-    if (AutoHB = 1) {
-    
-
     c1_color := 0xA7A7A7
     c2_color := 0xA7A7A7
     c3_color := 0xA7A7A7
-    tolerance := 20 ; and this is to change how much tolerance you want so if there are any false positive then we change this DO NOT ADD A BUTTON OR SLIDER OOK
-    counter := 0 ;A counter
-
-    Loop,15 { 
+    tolerance := 20
+    counter := 0
+    
+    Loop {
+        ; Check if AutoHB checkbox is unchecked
+        GuiControlGet, isChecked, , AutoHB
+        if (isChecked = 0) {
+            return ; Exit the loop if AutoHB is unchecked
+        }
+        
         PixelGetColor, c1, 1784, 20
         PixelGetColor, c2, 1856, 20
         PixelGetColor, c3, 1847, 20
@@ -90,16 +94,13 @@ AutoHBLoop() {
             Click
             BlockInput, off
             Send 1
-            Soundbeep
+            ;Soundbeep
             Sleep 15000
         }
         Sleep 15
     }
 }
-}
-if (AutoHB = 1) {
-    AutoHBLoop()
-}
+
 ColorDiff(color1, color2) {
     r1 := (color1 & 0xFF0000) >> 16
     g1 := (color1 & 0x00FF00) >> 8
