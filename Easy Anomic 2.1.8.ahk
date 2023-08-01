@@ -62,6 +62,9 @@ GuiClose:
 
 ; AutoHB
 AutoHBLoop() {
+    if (AutoHB = 1) {
+    
+
     c1_color := 0xA7A7A7
     c2_color := 0xA7A7A7
     c3_color := 0xA7A7A7
@@ -92,6 +95,7 @@ AutoHBLoop() {
         }
         Sleep 15
     }
+}
 }
 if (AutoHB = 1) {
     AutoHBLoop()
