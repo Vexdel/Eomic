@@ -67,8 +67,8 @@ GuiClose:
     ExitApp
     return
 
-
-AutoHBLoop() {
+;AutoHB REQUIRES FULL SCREEN
+AutoHBLoop() { 
     c1_color := 0xA7A7A7
     c2_color := 0xA7A7A7
     c3_color := 0xA7A7A7
