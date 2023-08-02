@@ -1,5 +1,5 @@
 # Eomic
-Utility macro approved by the Staff Team.
+Utility macro approved [by the Staff Team.](https://imgur.com/AiBl6Wn)
 
 
 These Macros use [AutoHotkey](https://www.autohotkey.com/) and don't modify or inject the Roblox Client in any way.
