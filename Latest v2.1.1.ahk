@@ -1,13 +1,21 @@
 #SingleInstance Force
 #NoEnv
+scriptDir := A_ScriptDir
+pngFile := "Logo.png"
+pngFilePath := scriptDir . "\" . pngFile
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
-Menu Tray, Icon, shell32.dll, 245
+
+Menu, Tray, Icon, %pngFilePath%
+
 Gui -MaximizeBox +AlwaysOnTop
 Gui Add, CheckBox, hWndhChkQuickHealthboost vskill_1 x8 y72 w132 h25, Quick HB [Q]
+
 Gui Add, Slider, vSlhb x144 y72 w132 h25  ToolTip Range6-9  , 6
+
 Gui Add, CheckBox, vskill_2 x8 y40 w132 h25, AutoReload
 Gui Add, Slider, vGunAmount x144 y8 w132 h25 ToolTip Range2-10  , 2
+
 Gui Add, Slider, vPing x416 y40 w132 h25 ToolTip Range120-500  , 250
 Gui Add, CheckBox, vskill_3 x8 y8 w132 h25, QuickGun
 Gui Add, DropDownList, vGun x416 y8 w132, Handgun|Heavy Pistol|Combat Pistol|Deagle|Automatics|Riot/sawed|Other shotguns|Default
@@ -22,6 +30,8 @@ Gui Add, Text, x280 y8 w132 h25 +0x200 , Choose Weapon
 Gui Show, x443 y175 w553 h167, Easy Anomic V2
 Gui Add, CheckBox, x280 y72 w120 h26 cRed, AutoHB
 Gui Add, Text, x416 y72 w120 h23 +0x200, Uses your 10th slot HB.
+
+
 Gui Add, Text, x520 y96 w36 h23 +0x200 -Background , V 2.1.1
 
 ResumeScript: 
@@ -40,10 +50,11 @@ Return
 
 Execute:
 
-    if (Paused) 
-        return  
+   if (Paused) 
+        return
+
     Gui, Submit, NoHide
-    Gui, Minimize
+    Gui, Minimize 
 
 GuiControlGet, isChecked, , AutoHB
     if (isChecked = 1) {
@@ -164,7 +175,7 @@ GetGunSleepValue(gun) {
             return 10
         case "Riot/sawed":
             return 10
-        case "Other shotguns": .
+        case "Other shotguns": 
             return 90
         case "Deagle":
             return 75
