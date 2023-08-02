@@ -9,7 +9,7 @@ These Macros use [AutoHotkey](https://www.autohotkey.com/) and don't modify or i
  
  -Auto Reload: Reloads a set ammount of weapons when pressing the XButton1.
  
- -Quick HB: Quickly uses a HealthBooster when pressing Q, user set the starting slot of the HealthBooster, the maximum inventory slot is 9 and the minimum is 6 but this will change in the future.
+ -Quick HB: Quickly uses a HealthBooster when pressing Q and configuring the starting slot of the HealthBooster, the maximum inventory slot is 9 and the minimum is 6 but this will change in the future.
  
  -AutoHB: Utilizes the slot 10 HealthBooster when your HealthBar lowers.
 
