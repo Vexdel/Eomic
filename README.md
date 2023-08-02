@@ -14,3 +14,5 @@ These Macros use [AutoHotkey](https://www.autohotkey.com/) and don't modify or i
  -AutoHB: Utilizes the slot 10 HealthBooster when your HealthBar lowers.
 
  More features soon.
+
+Download the Macro from the latest [Release](https://github.com/Vexdll/Eomic/releases)
